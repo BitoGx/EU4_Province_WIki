@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ColorBlueDark"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/imgLogoNav"
+        android:layout_width="@dimen/Layout100dp"
+        android:layout_height="@dimen/Layout100dp"
+        android:layout_gravity="left"/>
+
+    <TextView
+        android:id="@+id/txtNamaHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/Margin15dp"
+        android:text="Muhammad Rizqi Zein Azis"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/TextSize18sp" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RizqiGx@gmail.com"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

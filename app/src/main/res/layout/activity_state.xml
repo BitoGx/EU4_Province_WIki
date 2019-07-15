@@ -2,11 +2,11 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_state"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ColorBright"
-    tools:context=".MainActivity">
+    tools:context=".StateActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,10 +16,18 @@
         android:layout_marginTop="@dimen/Margin16dp"
         android:layout_marginEnd="@dimen/Margin16dp"
         android:layout_marginRight="@dimen/Margin16dp"
-        android:orientation="vertical" />
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_province"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/nvMain"
+        android:id="@+id/nvState"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

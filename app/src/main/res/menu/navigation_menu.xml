@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navhome"
+        android:title="Introduction" />
+    <item
+        android:id="@+id/navstatefav"
+        android:title="State Favorite" />
+
+    <item android:title="State &amp; Territories">
+        <menu>
+            <item
+                android:id="@+id/navstate"
+                android:title="State"/>
+            <item
+                android:id="@+id/navterritory"
+                android:title="Territory"/>
+        </menu>
+    </item>
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/navterrain"
+                android:title="Terrain" />
+        </menu>
+    </item>
+</menu>

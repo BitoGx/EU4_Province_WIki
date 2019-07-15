@@ -1,6 +1,5 @@
 package id.web.bitocode.eu4provincewiki;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,23 +7,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-
-import id.web.bitocode.eu4provincewiki.model.Eu4Model;
-
 
 /*
  *
@@ -33,19 +17,9 @@ import id.web.bitocode.eu4provincewiki.model.Eu4Model;
  * Nama  : Muhammad Rizqi Zein Azis
  * Kelas : AKB-2 / IF-2
  *
- * CHANGELOG July 10, 2019
- * - Membuat semua kemungkinan halaman yang akan disediakan
- * - Membuat Navigation Drawer untuk berpindah halaman
- * - Membuat fungsi pindah halaman
- * - Membuat style baru
- *
- * CHANGELOG July 14, 2019
- * - Membuat Dimens
- * - Implementasi Firebase
- *
  */
 
-public class MainActivity extends AppCompatActivity
+public class TerrainActivity extends AppCompatActivity
 {
   
   private DrawerLayout dl;
@@ -57,18 +31,18 @@ public class MainActivity extends AppCompatActivity
   protected void onCreate(Bundle savedInstanceState)
   {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_terrain);
   
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    getSupportActionBar().setTitle("Introduction");
+    getSupportActionBar().setTitle("Terrain");
   
-    dl = findViewById(R.id.activity_main);
+    dl = findViewById(R.id.activity_terrain);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
   
     dl.addDrawerListener(dt);
     dt.syncState();
   
-    nv = findViewById(R.id.nvMain);
+    nv = findViewById(R.id.nvTerrain);
     nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
     {
       @Override
@@ -78,27 +52,27 @@ public class MainActivity extends AppCompatActivity
         switch (id)
         {
           case R.id.navhome:
-            Toast.makeText(MainActivity.this, "Home",Toast.LENGTH_SHORT).show();
+            start = new Intent(TerrainActivity.this, MainActivity.class);
+            startActivity(start);
             break;
         
           case R.id.navstatefav:
-            start = new Intent(MainActivity.this, FavouriteStateActivity.class);
+            start = new Intent(TerrainActivity.this, FavouriteStateActivity.class);
             startActivity(start);
             break;
         
           case R.id.navstate:
-            start = new Intent(MainActivity.this, StateActivity.class);
+            start = new Intent(TerrainActivity.this, StateActivity.class);
             startActivity(start);
             break;
         
           case R.id.navterritory:
-            start = new Intent(MainActivity.this, TerritoryActivity.class);
+            start = new Intent(TerrainActivity.this, TerritoryActivity.class);
             startActivity(start);
             break;
         
           case R.id.navterrain:
-            start = new Intent(MainActivity.this, TerrainActivity.class);
-            startActivity(start);
+            Toast.makeText(TerrainActivity.this, "Terrain",Toast.LENGTH_SHORT).show();
             break;
         
           default:
