@@ -41,7 +41,15 @@ import id.web.bitocode.eu4provincewiki.model.Eu4Model;
  *
  * CHANGELOG July 14, 2019
  * - Membuat Dimens
- * - Implementasi Firebase
+ * - Implementasi Firebase *Failed
+ *
+ * CHANGELOG July 15, 2019
+ * - Implementasi Firebase *Success
+ * - Integrasi Data firebase ke RecyclerView
+ * - Edit Layout item_provinces *part1
+ *
+ * CHANGELOG July 19, 2019
+ * - Membuat fungsi untuk mengecek apakah ada internet atau tidak
  *
  */
 

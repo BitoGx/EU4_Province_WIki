@@ -4,4 +4,5 @@
     <dimen name="Margin15dp">15dp</dimen>
     <dimen name="Layout100dp">100dp</dimen>
     <dimen name="TextSize18sp">18sp</dimen>
+    <dimen name="TextSize16sp">16sp</dimen>
 </resources>

@@ -2,4 +2,5 @@
     <string name="app_name">EU4Province WIki</string>
     <string name="Open" />
     <string name="Close" />
+    <string name="refresh">Refresh</string>
 </resources>
