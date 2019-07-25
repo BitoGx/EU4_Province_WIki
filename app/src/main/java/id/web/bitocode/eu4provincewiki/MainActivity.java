@@ -51,6 +51,10 @@ import id.web.bitocode.eu4provincewiki.model.Eu4Model;
  * CHANGELOG July 19, 2019
  * - Membuat fungsi untuk mengecek apakah ada internet atau tidak
  *
+ * CHANGELOG July 25, 2019
+ * - Rombak UX
+ * - Rombak Database
+ *
  */
 
 public class MainActivity extends AppCompatActivity

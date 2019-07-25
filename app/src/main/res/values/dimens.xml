@@ -2,7 +2,14 @@
 <resources>
     <dimen name="Margin16dp">16dp</dimen>
     <dimen name="Margin15dp">15dp</dimen>
+    <dimen name="Margin8dp">8dp</dimen>
+    <dimen name="Margin5dp">5dp</dimen>
+    <dimen name="Border3dp">3dp</dimen>
+    <dimen name="Border2dp">2dp</dimen>
+    <dimen name="Padding16dp">16dp</dimen>
+    <dimen name="Padding6dp">6dp</dimen>
     <dimen name="Layout100dp">100dp</dimen>
     <dimen name="TextSize18sp">18sp</dimen>
     <dimen name="TextSize16sp">16sp</dimen>
+    <dimen name="TextSize14sp">14sp</dimen>
 </resources>

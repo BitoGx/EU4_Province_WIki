@@ -3,4 +3,10 @@
     <string name="Open" />
     <string name="Close" />
     <string name="refresh">Refresh</string>
+    <string name="Region">Region</string>
+    <string name="Continent">Continent</string>
+    <string name="TextState">State : </string>
+    <string name="TextDevelopment">Development : </string>
+    <string name="TextTerritory">Territory : </string>
+    <string name="intro"> This app is intended to help new player to find ID and to help finding max development at starting timeline</string>
 </resources>

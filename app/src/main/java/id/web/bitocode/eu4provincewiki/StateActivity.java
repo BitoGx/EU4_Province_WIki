@@ -3,6 +3,7 @@ package id.web.bitocode.eu4provincewiki;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Region;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -26,10 +28,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-import id.web.bitocode.eu4provincewiki.adapter.AdapterStateRecyclerView;
-import id.web.bitocode.eu4provincewiki.model.Eu4Model;
+import id.web.bitocode.eu4provincewiki.adapter.AdapterRegionRecyclerView;
+import id.web.bitocode.eu4provincewiki.model.RegionsModel;
 
 
 /*
@@ -41,25 +45,21 @@ import id.web.bitocode.eu4provincewiki.model.Eu4Model;
  *
  */
 
-public class StateActivity extends AppCompatActivity
+public class StateActivity extends AppCompatActivity implements AdapterRegionRecyclerView.onRegionListener
 {
   
   private DrawerLayout dl;
   private ActionBarDrawerToggle dt;
   private NavigationView nv;
   private Intent start;
+  private Intent delivery;
   
   //FIREBASE
   
-  private DatabaseReference database;
-  private DatabaseReference yourdatabase;
-  
-  private List<Eu4Model> daftarReq;
+  private List<RegionsModel> daftarRegion;
   
   private ProgressDialog loading;
-  private RecyclerView recyclerView;
-  
-  private Button btnRefresh;
+  private RecyclerView rv_Data;
   
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -68,12 +68,12 @@ public class StateActivity extends AppCompatActivity
     setContentView(R.layout.activity_state);
   
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    getSupportActionBar().setTitle("State");
+    getSupportActionBar().setTitle("Choose Region");
   
     dl = findViewById(R.id.activity_state);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
     
-    btnRefresh = findViewById(R.id.refreshButton);
+    Button btnRefresh = findViewById(R.id.refreshButton);
   
     dl.addDrawerListener(dt);
     dt.syncState();
@@ -119,52 +119,32 @@ public class StateActivity extends AppCompatActivity
     });
     
   
-    database = FirebaseDatabase.getInstance().getReference();
-    yourdatabase = database.child("User");
-    Eu4Model eu4Model = new Eu4Model();
-    yourdatabase.setValue(eu4Model);
-  
-    recyclerView = findViewById(R.id.rv_province);
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     
-    loading = ProgressDialog.show(StateActivity.this, null, "Loading...?", true, false);
+    rv_Data = findViewById(R.id.rv_European);
+    
+    loading = ProgressDialog.show(StateActivity.this, null, "Loading Region...", true, false);
     if(haveNetworkConnection())
     {
-      database.child("Provinces").addValueEventListener(new ValueEventListener()
+      database.child("Region").orderByChild("Region").addValueEventListener(new ValueEventListener()
       {
         @Override
-        public void onDataChange(DataSnapshot dataSnapshot)
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot)
         {
-          daftarReq = new ArrayList<>();
+          daftarRegion = new ArrayList<>();
           for(DataSnapshot ds : dataSnapshot.getChildren())
           {
-            Eu4Model requests = ds.getValue(Eu4Model.class);
-            requests.setContinent(ds.child("Continent").getValue(String.class));
-            requests.setCulture(ds.child("Culture").getValue(String.class));
-            requests.setId(ds.child("Id").getValue(Long.class));
-            requests.setManpower(ds.child("Manpower").getValue(Long.class));
-            requests.setOwner(ds.child("Owner").getValue(String.class));
-            requests.setPermanent_Modifiers(ds.child("Permanent_Modifiers").getValue(String.class));
-            requests.setProduction(ds.child("Production").getValue(Long.class));
-            requests.setRegion(ds.child("Region").getValue(String.class));
-            requests.setReligion(ds.child("Religion").getValue(String.class));
-            requests.setState(ds.child("State").getValue(String.class));
-            requests.setTax(ds.child("Tax").getValue(Long.class));
-            requests.setTerritory(ds.child("Territory").getValue(String.class));
-            requests.setTrade_Goods(ds.child("Trade_Goods").getValue(String.class));
-            requests.setTrade_Node(ds.child("Trade_Node").getValue(String.class));
-            daftarReq.add(requests);
+            RegionsModel request = ds.getValue(RegionsModel.class);
+            request.setName(ds.child("Name").getValue(String.class));
+            request.setRegion(ds.child("Region").getValue(String.class));
+            daftarRegion.add(request);
           }
-          AdapterStateRecyclerView recycler  = new AdapterStateRecyclerView(daftarReq);
-          RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(StateActivity.this);
-          recyclerView.setLayoutManager(mLayoutManager);
-          recyclerView.setItemAnimator(new DefaultItemAnimator());
-          recyclerView.setAdapter(recycler);
-          recyclerView.setHasFixedSize(true);
+          initRecyclerView();
           loading.dismiss();
         }
-    
+  
         @Override
-        public void onCancelled(DatabaseError databaseError)
+        public void onCancelled(@NonNull DatabaseError databaseError)
         {
           System.out.println(databaseError.getDetails()+"Please Try Again"+databaseError.getMessage());
           loading.dismiss();
@@ -215,4 +195,23 @@ public class StateActivity extends AppCompatActivity
     return haveConnectedWifi || haveConnectedMobile;
   }
   
+  private void initRecyclerView()
+  {
+    AdapterRegionRecyclerView recycler  = new AdapterRegionRecyclerView(daftarRegion,this);
+    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(StateActivity.this);
+    rv_Data.setLayoutManager(mLayoutManager);
+    rv_Data.setItemAnimator(new DefaultItemAnimator());
+    rv_Data.setAdapter(recycler);
+  }
+  
+  @Override
+  public void onRegionClick(int position)
+  {
+    
+    RegionsModel data = daftarRegion.get(position);
+    delivery = new Intent(this, RegionActivity.class);
+    delivery.putExtra("Region", data.getName());
+    Log.d("Test", "onRegionClick: "+data.getName());
+    startActivity(delivery);
+  }
 }
