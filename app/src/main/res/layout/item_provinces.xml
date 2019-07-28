@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rl_layout"
     android:layout_width="match_parent"
     android:background="@drawable/border"
     android:layout_height="wrap_content"
@@ -17,17 +16,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
-            android:text="@string/TextState"
+            android:text="@string/TextId"
             android:textColor="@android:color/white"
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_provState"
+            android:id="@+id/tv_provId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
             android:textColor="@android:color/white"
             android:textSize="@dimen/TextSize16sp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextOwner"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provOwner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
     </TableRow>
 
     <TableRow
@@ -39,12 +60,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
-            android:text="@string/TextDevelopment"
+            android:text="@string/TextTerritory"
             android:textColor="@android:color/white"
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_provDevelopment"
+            android:id="@+id/tv_provTerritory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -54,19 +75,172 @@
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_provtitle3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
-            android:text="@string/TextTerritory"
+            android:text="@string/TextTax"
             android:textColor="@android:color/white"
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_provTerritory"
+            android:id="@+id/tv_provTax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextProduction"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provProduction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextManpower"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provManpower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextReligion"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provReligion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextCulture"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provCulture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextTradeGoods"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provTradeGoods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextTradeNode"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provTradeNode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_provtitle11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Padding6dp"
+            android:text="@string/TextPermanentMod"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_provPermanentMod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"

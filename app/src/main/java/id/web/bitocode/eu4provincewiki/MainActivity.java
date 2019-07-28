@@ -1,6 +1,5 @@
 package id.web.bitocode.eu4provincewiki;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,22 +7,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-
-import id.web.bitocode.eu4provincewiki.model.Eu4Model;
 
 
 /*
@@ -46,7 +31,7 @@ import id.web.bitocode.eu4provincewiki.model.Eu4Model;
  * CHANGELOG July 15, 2019
  * - Implementasi Firebase *Success
  * - Integrasi Data firebase ke RecyclerView
- * - Edit Layout item_provinces *part1
+ * - Edit Layout item_provinces
  *
  * CHANGELOG July 19, 2019
  * - Membuat fungsi untuk mengecek apakah ada internet atau tidak
@@ -55,14 +40,23 @@ import id.web.bitocode.eu4provincewiki.model.Eu4Model;
  * - Rombak UX
  * - Rombak Database
  *
+ * CHANGELOG July 27, 2019
+ * - Implementasi Search di StateActivity
+ * - Implementasi Search di RegionActivity
+ *
+ * CHANGELOG July 28, 2019
+ * - Implementasi onClick pada Item RegionActivty
+ * - Pembuatan ProvinceActivity baru untuk menerima data dari RegionActivity
+ * - Rename AdapterProvinceRecyleView menjadi AdapterStateRecyleView
+ * - Rename item_provinces menjadi item_states
+ * - Pembuatan item_province untuk menampilkan data province/territory
+ * - Mengubah awalan id item_states dari prov menjadi stat
  */
 
 public class MainActivity extends AppCompatActivity
 {
   
-  private DrawerLayout dl;
   private ActionBarDrawerToggle dt;
-  private NavigationView nv;
   private Intent start;
   
   @Override
@@ -71,16 +65,19 @@ public class MainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
   
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    getSupportActionBar().setTitle("Introduction");
-  
-    dl = findViewById(R.id.activity_main);
+    if(getSupportActionBar() != null)
+    {
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      getSupportActionBar().setTitle("Introduction");
+    }
+    
+    DrawerLayout dl = findViewById(R.id.activity_main);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
   
     dl.addDrawerListener(dt);
     dt.syncState();
   
-    nv = findViewById(R.id.nvMain);
+    NavigationView nv = findViewById(R.id.nvMain);
     nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
     {
       @Override

@@ -7,6 +7,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.SearchView;
+
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -22,27 +26,53 @@ import android.widget.Toast;
 public class FavouriteStateActivity extends AppCompatActivity
 {
   
-  private DrawerLayout dl;
   private ActionBarDrawerToggle dt;
-  private NavigationView nv;
   private Intent start;
+  
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu)
+  {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.search_menu,menu);
+    MenuItem menuItem = menu.findItem(R.id.app_bar_search);
+    final SearchView searchView = (SearchView) menuItem.getActionView();
+    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+    {
+      @Override
+      public boolean onQueryTextSubmit(String query)
+      {
+        return false;
+      }
+  
+      @Override
+      public boolean onQueryTextChange(String newText)
+      {
+        return false;
+      }
+    });
+    return super.onCreateOptionsMenu(menu);
+  }
   
   @Override
   protected void onCreate(Bundle savedInstanceState)
   {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_favourite_state);
-  
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    getSupportActionBar().setTitle("Favorite State");
-  
-    dl = findViewById(R.id.activity_favourite_state);
+    
+    
+    if(getSupportActionBar() != null)
+    {
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      getSupportActionBar().setTitle("Favorite State");
+    }
+    
+    DrawerLayout dl = findViewById(R.id.activity_favourite_state);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
   
     dl.addDrawerListener(dt);
     dt.syncState();
   
-    nv = findViewById(R.id.nvStateFav);
+    NavigationView nv = findViewById(R.id.nvStateFav);
     nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
     {
       @Override

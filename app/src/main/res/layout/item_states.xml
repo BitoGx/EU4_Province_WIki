@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tl_layout"
     android:layout_width="match_parent"
     android:background="@drawable/border"
     android:layout_height="wrap_content"
@@ -13,38 +12,16 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/tv_regtitle6"
+            android:id="@+id/tv_stattitle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
-            android:text="@string/TextContinent"
+            android:text="@string/TextState"
             android:textColor="@android:color/white"
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_regRegion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/Padding6dp"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/TextSize16sp" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/tv_regtitle1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/Padding6dp"
-            android:text="@string/TextRegion"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/TextSize16sp" />
-
-        <TextView
-            android:id="@+id/tv_regState"
+            android:id="@+id/tv_statRegion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -57,7 +34,7 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/tv_regtitle2"
+            android:id="@+id/tv_stattitle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -66,7 +43,7 @@
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_regTax"
+            android:id="@+id/tv_statTax"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -79,7 +56,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_regtitle3"
+            android:id="@+id/tv_stattitle3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -88,7 +65,7 @@
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_regProduction"
+            android:id="@+id/tv_statProduction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -100,7 +77,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_regtitle4"
+            android:id="@+id/tv_stattitle4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -109,7 +86,7 @@
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_regManpower"
+            android:id="@+id/tv_statManpower"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -122,7 +99,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_regtitle5"
+            android:id="@+id/tv_stattitle5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"
@@ -131,7 +108,7 @@
             android:textSize="@dimen/TextSize16sp" />
 
         <TextView
-            android:id="@+id/tv_regTerritory"
+            android:id="@+id/tv_statTerritory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/Padding6dp"

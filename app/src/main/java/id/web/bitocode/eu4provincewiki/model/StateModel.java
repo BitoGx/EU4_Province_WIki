@@ -1,9 +1,8 @@
 package id.web.bitocode.eu4provincewiki.model;
 
-public class RegionsModel
+public class StateModel
 {
   private String Name;
-  private String Region;
   private Long Total_Tax;
   private Long Total_Production;
   private Long Total_Manpower;
@@ -17,16 +16,6 @@ public class RegionsModel
   public void setName(String name)
   {
     Name = name;
-  }
-  
-  public String getRegion()
-  {
-    return Region;
-  }
-  
-  public void setRegion(String region)
-  {
-    Region = region;
   }
   
   public Long getTotal_Tax()

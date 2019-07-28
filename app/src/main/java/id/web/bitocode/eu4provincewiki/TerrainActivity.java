@@ -22,9 +22,7 @@ import android.widget.Toast;
 public class TerrainActivity extends AppCompatActivity
 {
   
-  private DrawerLayout dl;
   private ActionBarDrawerToggle dt;
-  private NavigationView nv;
   private Intent start;
   
   @Override
@@ -33,16 +31,19 @@ public class TerrainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_terrain);
   
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    getSupportActionBar().setTitle("Terrain");
+    if(getSupportActionBar() != null)
+    {
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      getSupportActionBar().setTitle("Terrain");
+    }
   
-    dl = findViewById(R.id.activity_terrain);
+    DrawerLayout dl = findViewById(R.id.activity_terrain);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
   
     dl.addDrawerListener(dt);
     dt.syncState();
   
-    nv = findViewById(R.id.nvTerrain);
+    NavigationView nv = findViewById(R.id.nvTerrain);
     nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
     {
       @Override

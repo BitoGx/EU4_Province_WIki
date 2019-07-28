@@ -22,9 +22,7 @@ import android.widget.Toast;
 public class TerritoryActivity extends AppCompatActivity
 {
   
-  private DrawerLayout dl;
   private ActionBarDrawerToggle dt;
-  private NavigationView nv;
   private Intent start;
   
   @Override
@@ -32,17 +30,20 @@ public class TerritoryActivity extends AppCompatActivity
   {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_territory);
+    
+    if(getSupportActionBar() != null)
+    {
+      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      getSupportActionBar().setTitle("Territory");
+    }
   
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    getSupportActionBar().setTitle("Territory");
-  
-    dl = findViewById(R.id.activity_territory);
+    DrawerLayout dl = findViewById(R.id.activity_territory);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
   
     dl.addDrawerListener(dt);
     dt.syncState();
   
-    nv = findViewById(R.id.nvTerritory);
+    NavigationView nv = findViewById(R.id.nvTerritory);
     nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
     {
       @Override
