@@ -7,18 +7,12 @@
     android:orientation="vertical"
     android:padding="15dp">
 
-    <ImageView
-        android:id="@+id/imgLogoNav"
-        android:layout_width="@dimen/Layout100dp"
-        android:layout_height="@dimen/Layout100dp"
-        android:layout_gravity="left"/>
-
     <TextView
         android:id="@+id/txtNamaHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/Margin15dp"
-        android:text="Muhammad Rizqi Zein Azis"
+        android:text="@string/app_name"
         android:textColor="@android:color/white"
         android:textSize="@dimen/TextSize18sp" />
 
@@ -26,7 +20,5 @@
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RizqiGx@gmail.com"
         android:textColor="@android:color/white" />
-
 </LinearLayout>

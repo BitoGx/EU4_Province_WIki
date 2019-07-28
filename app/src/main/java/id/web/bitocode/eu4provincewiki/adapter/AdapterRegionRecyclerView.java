@@ -38,7 +38,7 @@ public class AdapterRegionRecyclerView extends RecyclerView.Adapter<AdapterRegio
     private TextView tv_region;
     private onRegionListener onRegionListener;
   
-    public ViewHolder(View view, onRegionListener onRegionListener)
+    ViewHolder(View view, onRegionListener onRegionListener)
     {
       super(view);
       tv_region = view.findViewById(R.id.tv_regRegion);

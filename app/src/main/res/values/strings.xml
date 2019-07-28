@@ -3,6 +3,13 @@
     <string name="Open" />
     <string name="Close" />
     <string name="Refresh">Refresh</string>
+    <string name="MenuIntroduction">Introduction</string>
+    <string name="MenuStateFavorite">State Favorite</string>
+    <string name="MenuStateandTerritories">State &amp; Territories</string>
+    <string name="MenuState">States</string>
+    <string name="MenuTerritory">Territory</string>
+    <string name="MenuOther">Other</string>
+    <string name="MenuTerrain">Terrain</string>
     <string name="ComingSoon">Coming Soon</string>
     <string name="HintSearch">Search here&#8230;</string>
     <string name="TextContinent">Continent : </string>

@@ -38,7 +38,7 @@ public class AdapterStateRecyclerView extends RecyclerView.Adapter<AdapterStateR
     private TextView tv_territory;
     private onStateListener onStateListener;
     
-    public ViewHolder(View view, onStateListener onStateListener)
+    ViewHolder(View view, onStateListener onStateListener)
     {
       super(view);
       tv_name = view.findViewById(R.id.tv_statRegion);
@@ -120,6 +120,7 @@ public class AdapterStateRecyclerView extends RecyclerView.Adapter<AdapterStateR
       results.values = filteredList;
       return  results;
     }
+    
     
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results)

@@ -139,9 +139,16 @@ public class StateActivity extends AppCompatActivity implements AdapterRegionRec
           for(DataSnapshot ds : dataSnapshot.getChildren())
           {
             RegionsModel request = ds.getValue(RegionsModel.class);
-            request.setName(ds.child("Name").getValue(String.class));
-            request.setRegion(ds.child("Region").getValue(String.class));
-            daftarRegion.add(request);
+            if (request != null)
+            {
+              request.setName(ds.child("Name").getValue(String.class));
+              request.setRegion(ds.child("Region").getValue(String.class));
+              request.setTotal_Tax(ds.child("Total_Tax").getValue(Long.class));
+              request.setTotal_Production(ds.child("Total_Production").getValue(Long.class));
+              request.setTotal_Manpower(ds.child("Total_Manpower").getValue(Long.class));
+              request.setTotal_Territory(ds.child("Total_Territory").getValue(Long.class));
+              daftarRegion.add(request);
+            }
           }
           initRecyclerView();
           loading.dismiss();

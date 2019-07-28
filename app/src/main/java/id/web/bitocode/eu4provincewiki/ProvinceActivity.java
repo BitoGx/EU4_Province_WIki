@@ -125,18 +125,21 @@ public class ProvinceActivity extends AppCompatActivity
           for(DataSnapshot ds : dataSnapshot.getChildren())
           {
             ProvinceModel request = ds.getValue(ProvinceModel.class);
-            request.setId(ds.child("Id").getValue(Long.class));
-            request.setName(ds.child("Name").getValue(String.class));
-            request.setOwner(ds.child("Owner").getValue(String.class));
-            request.setTax(ds.child("Tax").getValue(Long.class));
-            request.setProduction(ds.child("Production").getValue(Long.class));
-            request.setManpower(ds.child("Manpower").getValue(Long.class));
-            request.setReligion(ds.child("Religion").getValue(String.class));
-            request.setCulture(ds.child("Culture").getValue(String.class));
-            request.setTrade_Goods(ds.child("Trade_Goods").getValue(String.class));
-            request.setTrade_Node(ds.child("Trade_Node").getValue(String.class));
-            request.setPermanent_Modifiers(ds.child("Permanent_Modifiers").getValue(String.class));
-            daftarProvince.add(request);
+            if (request != null)
+            {
+              request.setId(ds.child("Id").getValue(Long.class));
+              request.setName(ds.child("Name").getValue(String.class));
+              request.setOwner(ds.child("Owner").getValue(String.class));
+              request.setTax(ds.child("Tax").getValue(Long.class));
+              request.setProduction(ds.child("Production").getValue(Long.class));
+              request.setManpower(ds.child("Manpower").getValue(Long.class));
+              request.setReligion(ds.child("Religion").getValue(String.class));
+              request.setCulture(ds.child("Culture").getValue(String.class));
+              request.setTrade_Goods(ds.child("Trade_Goods").getValue(String.class));
+              request.setTrade_Node(ds.child("Trade_Node").getValue(String.class));
+              request.setPermanent_Modifiers(ds.child("Permanent_Modifiers").getValue(String.class));
+              daftarProvince.add(request);
+            }
           }
           initRecyclerView();
           loading.dismiss();

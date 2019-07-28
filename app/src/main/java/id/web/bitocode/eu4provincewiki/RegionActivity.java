@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -135,12 +134,15 @@ public class RegionActivity extends AppCompatActivity implements AdapterStateRec
           for(DataSnapshot ds : dataSnapshot.getChildren())
           {
             StateModel request = ds.getValue(StateModel.class);
-            request.setName(ds.child("Name").getValue(String.class));
-            request.setTotal_Manpower(ds.child("Total_Manpower").getValue(Long.class));
-            request.setTotal_Production(ds.child("Total_Production").getValue(Long.class));
-            request.setTotal_Tax(ds.child("Total_Tax").getValue(Long.class));
-            request.setTotal_Territory(ds.child("Total_Territory").getValue(Long.class));
-            daftarState.add(request);
+            if (request != null)
+            {
+              request.setName(ds.child("Name").getValue(String.class));
+              request.setTotal_Manpower(ds.child("Total_Manpower").getValue(Long.class));
+              request.setTotal_Production(ds.child("Total_Production").getValue(Long.class));
+              request.setTotal_Tax(ds.child("Total_Tax").getValue(Long.class));
+              request.setTotal_Territory(ds.child("Total_Territory").getValue(Long.class));
+              daftarState.add(request);
+            }
           }
           initRecyclerView();
           loading.dismiss();

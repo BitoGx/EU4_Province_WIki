@@ -27,7 +27,7 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
     provinceModelFull = new ArrayList<>(provinceModel);
   }
   
-  public class ViewHolder extends RecyclerView.ViewHolder
+  class ViewHolder extends RecyclerView.ViewHolder
   {
     private TextView tv_id;
     private TextView tv_name;
@@ -41,7 +41,7 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
     private TextView tv_production;
     private TextView tv_manpower;
     
-    public ViewHolder(View view)
+    ViewHolder(View view)
     {
       super(view);
       tv_id = view.findViewById(R.id.tv_provId);
