@@ -1,11 +1,14 @@
 package id.web.bitocode.eu4provincewiki.model;
 
-public class ProvinceModel
+public class TerritoryModel
 {
   private String Name;
   private String Owner;
+  private String State;
+  private String Region;
   private String Culture;
   private String Religion;
+  private String Continent;
   private String Trade_Node;
   private String Trade_Goods;
   private String Permanent_Modifiers;
@@ -34,6 +37,26 @@ public class ProvinceModel
     Owner = owner;
   }
   
+  public String getState()
+  {
+    return State;
+  }
+  
+  public void setState(String state)
+  {
+    State = state;
+  }
+  
+  public String getRegion()
+  {
+    return Region;
+  }
+  
+  public void setRegion(String region)
+  {
+    Region = region;
+  }
+  
   public String getCulture()
   {
     return Culture;
@@ -52,6 +75,16 @@ public class ProvinceModel
   public void setReligion(String religion)
   {
     Religion = religion;
+  }
+  
+  public String getContinent()
+  {
+    return Continent;
+  }
+  
+  public void setContinent(String continent)
+  {
+    Continent = continent;
   }
   
   public String getTrade_Node()
@@ -104,16 +137,6 @@ public class ProvinceModel
     Tax = tax;
   }
   
-  public Long getProduction()
-  {
-    return Production;
-  }
-  
-  public void setProduction(Long production)
-  {
-    Production = production;
-  }
-  
   public Long getManpower()
   {
     return Manpower;
@@ -122,5 +145,15 @@ public class ProvinceModel
   public void setManpower(Long manpower)
   {
     Manpower = manpower;
+  }
+  
+  public Long getProduction()
+  {
+    return Production;
+  }
+  
+  public void setProduction(Long production)
+  {
+    Production = production;
   }
 }

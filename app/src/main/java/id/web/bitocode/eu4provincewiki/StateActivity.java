@@ -59,8 +59,6 @@ public class StateActivity extends AppCompatActivity implements AdapterRegionRec
   
   AdapterRegionRecyclerView recycler;
   
-
-  
   @Override
   protected void onCreate(Bundle savedInstanceState)
   {
@@ -77,7 +75,7 @@ public class StateActivity extends AppCompatActivity implements AdapterRegionRec
     DrawerLayout dl = findViewById(R.id.activity_state);
     dt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
     
-    Button btnRefresh = findViewById(R.id.refreshButton);
+    Button btnRefresh = findViewById(R.id.btn_stateRefresh);
   
     dl.addDrawerListener(dt);
     dt.syncState();
@@ -96,13 +94,8 @@ public class StateActivity extends AppCompatActivity implements AdapterRegionRec
             startActivity(start);
             break;
         
-          case R.id.navstatefav:
-            start = new Intent(StateActivity.this, FavouriteStateActivity.class);
-            startActivity(start);
-            break;
-        
-          case R.id.navstate:
-            Toast.makeText(StateActivity.this, "States",Toast.LENGTH_SHORT).show();
+          case R.id.navchoosebyregion:
+            Toast.makeText(StateActivity.this, "Choose by Region",Toast.LENGTH_SHORT).show();
             break;
         
           case R.id.navterritory:
@@ -157,7 +150,7 @@ public class StateActivity extends AppCompatActivity implements AdapterRegionRec
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError)
         {
-          System.out.println(databaseError.getDetails()+"Please Try Again"+databaseError.getMessage());
+          System.out.println(databaseError.getDetails()+"I think we have an error : "+databaseError.getMessage());
           loading.dismiss();
         }
       });

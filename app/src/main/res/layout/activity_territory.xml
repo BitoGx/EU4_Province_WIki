@@ -16,7 +16,19 @@
         android:layout_marginTop="@dimen/Margin16dp"
         android:layout_marginEnd="@dimen/Margin16dp"
         android:layout_marginRight="@dimen/Margin16dp"
-        android:orientation="vertical"/>
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_territoryRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Refresh" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_territoryData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nvTerritory"

@@ -121,7 +121,7 @@ public class AdapterStateRecyclerView extends RecyclerView.Adapter<AdapterStateR
       return  results;
     }
     
-    
+    @SuppressWarnings("unchecked")
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results)
     {

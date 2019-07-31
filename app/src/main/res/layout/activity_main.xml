@@ -19,12 +19,80 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_mainTitle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/intro"
             android:textAlignment="center"
-            android:layout_gravity="center"/>
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_mainNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/MainNotes"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize16sp"/>
+
+        <TextView
+            android:id="@+id/tv_mainAnnouncement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize14sp" />
+
+        <TextView
+            android:id="@+id/tv_mainHowToUse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/MainHowtoUse"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize16sp" />
+
+        <TextView
+            android:id="@+id/tv_mainTutorial0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/MainTutorial0"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize14sp" />
+
+        <TextView
+            android:id="@+id/tv_mainTutorial1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/MainTutorial1"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize14sp" />
+
+        <TextView
+            android:id="@+id/tv_mainTutorial2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/MainTutorial2"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize14sp" />
+
+        <TextView
+            android:id="@+id/tv_mainTutorial3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/MainTutorial3"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/TextSize14sp" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

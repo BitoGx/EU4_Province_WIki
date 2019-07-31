@@ -10,6 +10,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/Margin16dp"
+        android:layout_marginLeft="@dimen/Margin16dp"
+        android:layout_marginTop="@dimen/Margin16dp"
+        android:layout_marginEnd="@dimen/Margin16dp"
+        android:layout_marginRight="@dimen/Margin16dp"
         android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView

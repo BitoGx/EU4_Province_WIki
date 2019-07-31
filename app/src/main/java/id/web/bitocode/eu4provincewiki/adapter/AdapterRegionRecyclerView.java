@@ -123,6 +123,7 @@ public class AdapterRegionRecyclerView extends RecyclerView.Adapter<AdapterRegio
       return  results;
     }
   
+    @SuppressWarnings("unchecked")
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results)
     {

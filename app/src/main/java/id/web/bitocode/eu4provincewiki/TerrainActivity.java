@@ -57,12 +57,7 @@ public class TerrainActivity extends AppCompatActivity
             startActivity(start);
             break;
         
-          case R.id.navstatefav:
-            start = new Intent(TerrainActivity.this, FavouriteStateActivity.class);
-            startActivity(start);
-            break;
-        
-          case R.id.navstate:
+          case R.id.navchoosebyregion:
             start = new Intent(TerrainActivity.this, StateActivity.class);
             startActivity(start);
             break;

@@ -3,10 +3,15 @@
     <string name="Open" />
     <string name="Close" />
     <string name="Refresh">Refresh</string>
+    <string name="MainNotes">Notes : </string>
+    <string name="MainHowtoUse">How to Use : </string>
+    <string name="MainTutorial0">This app is pretty straightforward there is 2 main function from this the first one is</string>
+    <string name="MainTutorial1"> - First open the menu -> choose Territory and then it will spawn all the territory from the game ( check notes first )</string>
+    <string name="MainTutorial2"> - Second open the menu -> choose by Region and then choose by State and you will see the territory this function is made to find which region have the most territory and maybe in the future will add total state too</string>
+    <string name="MainTutorial3"> - Search option can be used to find Id or Name of the Region, States and territory ( at the top right of the screen just click the magnifying glass )</string>
     <string name="MenuIntroduction">Introduction</string>
-    <string name="MenuStateFavorite">State Favorite</string>
     <string name="MenuStateandTerritories">State &amp; Territories</string>
-    <string name="MenuState">States</string>
+    <string name="MenuChooseByRegion">Choose by Region</string>
     <string name="MenuTerritory">Territory</string>
     <string name="MenuOther">Other</string>
     <string name="MenuTerrain">Terrain</string>
@@ -30,5 +35,5 @@
     <string name="TextTradeNode">Trade Node : </string>
     <string name="TextTradeGoods">Trade Goods : </string>
     <string name="TextPermanentMod">Permanent Modifiers : </string>
-    <string name="intro"> This app is intended to help new player to find ID and to help finding max development at starting timeline</string>
+    <string name="intro"> This app is intended to help new player to find Province ID and to help finding max development at starting timeline</string>
 </resources>

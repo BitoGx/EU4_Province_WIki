@@ -3,15 +3,12 @@
     <item
         android:id="@+id/navhome"
         android:title="@string/MenuIntroduction" />
-    <item
-        android:id="@+id/navstatefav"
-        android:title="@string/MenuStateFavorite" />
 
     <item android:title="@string/MenuStateandTerritories">
         <menu>
             <item
-                android:id="@+id/navstate"
-                android:title="@string/MenuState"/>
+                android:id="@+id/navchoosebyregion"
+                android:title="@string/MenuChooseByRegion"/>
             <item
                 android:id="@+id/navterritory"
                 android:title="@string/MenuTerritory"/>
@@ -21,7 +18,7 @@
         <menu>
             <item
                 android:id="@+id/navterrain"
-                android:title="@string/MenuTerritory" />
+                android:title="@string/MenuTerrain" />
         </menu>
     </item>
 </menu>

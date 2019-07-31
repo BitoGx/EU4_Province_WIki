@@ -6,19 +6,29 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProvinceActivity"></activity>
-        <activity android:name=".RegionActivity" />
+        <activity android:name=".ProvinceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".RegionActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
         <activity android:name=".TerrainActivity" />
-        <activity android:name=".FavouriteStateActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".TerritoryActivity" />
-        <activity android:name=".StateActivity">
+        <activity
+            android:name=".StateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".TerritoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,5 +36,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

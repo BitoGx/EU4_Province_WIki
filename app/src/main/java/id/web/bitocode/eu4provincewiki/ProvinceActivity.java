@@ -82,12 +82,7 @@ public class ProvinceActivity extends AppCompatActivity
             startActivity(start);
             break;
         
-          case R.id.navstatefav:
-            start = new Intent(ProvinceActivity.this, FavouriteStateActivity.class);
-            startActivity(start);
-            break;
-        
-          case R.id.navstate:
+          case R.id.navchoosebyregion:
             start = new Intent(ProvinceActivity.this, StateActivity.class);
             startActivity(start);
             break;
@@ -113,10 +108,10 @@ public class ProvinceActivity extends AppCompatActivity
     
     rv_Data = findViewById(R.id.rv_provData);
   
-    loading = ProgressDialog.show(ProvinceActivity.this, null, "Loading State...", true, false);
+    loading = ProgressDialog.show(ProvinceActivity.this, null, "Loading Territory...", true, false);
     if(haveNetworkConnection())
     {
-      database.child("Territory").child(State).orderByChild("Id").addValueEventListener(new ValueEventListener()
+      database.child("Territory").child(State).orderByChild("Name").addValueEventListener(new ValueEventListener()
       {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot)
@@ -148,7 +143,7 @@ public class ProvinceActivity extends AppCompatActivity
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError)
         {
-          System.out.println(databaseError.getDetails()+"Please Try Again"+databaseError.getMessage());
+          System.out.println(databaseError.getDetails()+"I think we have an error : "+databaseError.getMessage());
           loading.dismiss();
         }
       });

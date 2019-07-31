@@ -13,18 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import id.web.bitocode.eu4provincewiki.R;
-import id.web.bitocode.eu4provincewiki.model.ProvinceModel;
+import id.web.bitocode.eu4provincewiki.model.TerritoryModel;
 
-public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterProvinceRecyclerView.ViewHolder> implements Filterable
+public class AdapterTerritoryRecyclerView extends RecyclerView.Adapter<AdapterTerritoryRecyclerView.ViewHolder> implements Filterable
 {
   
-  private List<ProvinceModel> provinceModels;
-  private List<ProvinceModel> provinceModelFull;
+  private List<TerritoryModel> territoryModels;
+  private List<TerritoryModel> territoryModelFull;
   
-  public AdapterProvinceRecyclerView(List<ProvinceModel> provinceModel)
+  public AdapterTerritoryRecyclerView(List<TerritoryModel> territoryModel)
   {
-    this.provinceModels = provinceModel;
-    provinceModelFull = new ArrayList<>(provinceModel);
+    this.territoryModels = territoryModel;
+    territoryModelFull = new ArrayList<>(territoryModel);
   }
   
   class ViewHolder extends RecyclerView.ViewHolder
@@ -32,29 +32,33 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
     private TextView tv_id;
     private TextView tv_name;
     private TextView tv_owner;
+    private TextView tv_state;
+    private TextView tv_region;
     private TextView tv_culture;
     private TextView tv_religion;
     private TextView tv_trade_node;
     private TextView tv_trade_goods;
     private TextView tv_permanent_mod;
     private TextView tv_tax;
-    private TextView tv_production;
     private TextView tv_manpower;
+    private TextView tv_production;
     
     ViewHolder(View view)
     {
       super(view);
-      tv_id = view.findViewById(R.id.tv_provId);
-      tv_name = view.findViewById(R.id.tv_provTerritory);
-      tv_owner = view.findViewById(R.id.tv_provOwner);
-      tv_culture = view.findViewById(R.id.tv_provCulture);
-      tv_religion = view.findViewById(R.id.tv_provReligion);
-      tv_trade_node = view.findViewById(R.id.tv_provTradeNode);
-      tv_trade_goods = view.findViewById(R.id.tv_provTradeGoods);
-      tv_permanent_mod = view.findViewById(R.id.tv_provPermanentMod);
-      tv_tax = view.findViewById(R.id.tv_provTax);
-      tv_production = view.findViewById(R.id.tv_provProduction);
-      tv_manpower = view.findViewById(R.id.tv_provManpower);
+      tv_id = view.findViewById(R.id.tv_territoryId);
+      tv_name = view.findViewById(R.id.tv_territoryTerritory);
+      tv_state = view.findViewById(R.id.tv_territoryState);
+      tv_region = view.findViewById(R.id.tv_territoryRegion);
+      tv_owner = view.findViewById(R.id.tv_territoryOwner);
+      tv_culture = view.findViewById(R.id.tv_territoryCulture);
+      tv_religion = view.findViewById(R.id.tv_territoryReligion);
+      tv_trade_node = view.findViewById(R.id.tv_territoryTradeNode);
+      tv_trade_goods = view.findViewById(R.id.tv_territoryTradeGoods);
+      tv_permanent_mod = view.findViewById(R.id.tv_territoryPermanentMod);
+      tv_tax = view.findViewById(R.id.tv_territoryTax);
+      tv_production = view.findViewById(R.id.tv_territoryProduction);
+      tv_manpower = view.findViewById(R.id.tv_territoryManpower);
     }
   }
   
@@ -62,17 +66,19 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
   @Override
   public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
   {
-    View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_provinces,viewGroup,false);
+    View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_territory,viewGroup,false);
     return new ViewHolder(itemView);
   }
   
   @Override
   public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i)
   {
-    ProvinceModel data = provinceModels.get(i);
+    TerritoryModel data = territoryModels.get(i);
     viewHolder.tv_id.setText(String.valueOf(data.getId()));
     viewHolder.tv_name.setText(data.getName());
     viewHolder.tv_owner.setText(data.getOwner());
+    viewHolder.tv_state.setText(data.getState());
+    viewHolder.tv_region.setText(data.getRegion());
     viewHolder.tv_culture.setText(data.getCulture());
     viewHolder.tv_religion.setText(data.getReligion());
     viewHolder.tv_trade_node.setText(data.getTrade_Node());
@@ -86,7 +92,7 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
   @Override
   public int getItemCount()
   {
-    return provinceModels.size();
+    return territoryModels.size();
   }
   
   @Override
@@ -100,19 +106,18 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
     @Override
     protected FilterResults performFiltering(CharSequence constraint)
     {
-      List<ProvinceModel> filteredList = new ArrayList<>();
+      List<TerritoryModel> filteredList = new ArrayList<>();
   
-      if(constraint == null || constraint.length() == 0)
+      if (constraint == null || constraint.length() == 0)
       {
-        filteredList.addAll(provinceModelFull);
-      }
-      else
+        filteredList.addAll(territoryModelFull);
+      } else
       {
         String filterPattern = constraint.toString().toLowerCase().trim();
-    
-        for(ProvinceModel provinceModels : provinceModelFull)
+  
+        for (TerritoryModel provinceModels : territoryModelFull)
         {
-          if(provinceModels.getName().toLowerCase().contains(filterPattern) || String.valueOf(provinceModels.getId()).toLowerCase().contains(filterPattern))
+          if (provinceModels.getName().toLowerCase().contains(filterPattern) || String.valueOf(provinceModels.getId()).toLowerCase().contains(filterPattern))
           {
             filteredList.add(provinceModels);
           }
@@ -120,16 +125,17 @@ public class AdapterProvinceRecyclerView extends RecyclerView.Adapter<AdapterPro
       }
       FilterResults results = new FilterResults();
       results.values = filteredList;
-      return  results;
+      return results;
     }
   
     @SuppressWarnings("unchecked")
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results)
     {
-      provinceModels.clear();
-      provinceModels.addAll((List) results.values);
+      territoryModels.clear();
+      territoryModels.addAll((List) results.values);
       notifyDataSetChanged();
     }
+    
   };
 }

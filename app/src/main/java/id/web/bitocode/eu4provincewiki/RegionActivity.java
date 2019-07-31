@@ -91,12 +91,7 @@ public class RegionActivity extends AppCompatActivity implements AdapterStateRec
             startActivity(start);
             break;
         
-          case R.id.navstatefav:
-            start = new Intent(RegionActivity.this, FavouriteStateActivity.class);
-            startActivity(start);
-            break;
-        
-          case R.id.navstate:
+          case R.id.navchoosebyregion:
             start = new Intent(RegionActivity.this, StateActivity.class);
             startActivity(start);
             break;
@@ -151,7 +146,7 @@ public class RegionActivity extends AppCompatActivity implements AdapterStateRec
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError)
         {
-          System.out.println(databaseError.getDetails()+"Please Try Again"+databaseError.getMessage());
+          System.out.println(databaseError.getDetails()+"I think we have an error : "+databaseError.getMessage());
           loading.dismiss();
         }
       });
